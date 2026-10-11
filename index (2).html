@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marwan Kassem — Web Developer & Copywriter</title>
+<meta name="theme-color" content="#000000"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Kaushan+Script&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#4a4d44;--card:#f2f3ef;--ci:#23261f;--lime:#d7f27a;--ink:#fff;--soft:rgba(255,255,255,.64);--sans:'Lexend',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#000}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:#000;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;min-height:100svh;overflow:hidden;padding:120px clamp(20px,5vw,64px) 80px;display:grid;align-content:center;
+background:#000}
+#cv{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ghost{position:absolute;left:2vw;bottom:-4vw;font-size:22vw;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.05);line-height:.8;pointer-events:none;white-space:nowrap}
+/* dock */
+.dock{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:4px;padding:5px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(34,40,31,.78);backdrop-filter:blur(10px);box-shadow:0 10px 26px rgba(10,14,8,.3);animation:drop .9s cubic-bezier(.16,1,.3,1) both}
+.dock a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:11px 15px;border-radius:11px;color:var(--soft);transition:.25s}
+.dock a:hover{background:rgba(255,255,255,.1);color:#fff;transform:translateY(2px)}
+.dock a.on{background:var(--card);color:var(--ci)}
+.dock .mk{background:#eef1e7;color:#23261f;font-weight:600;letter-spacing:.02em}
+@keyframes drop{from{opacity:0;transform:translate(-50%,-30px)}}
+.wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--lime);margin-bottom:22px;display:flex;gap:10px;align-items:center}
+.sigwrap{margin-bottom:26px;animation:fade 1s both}.sig{font-family:'Kaushan Script','Brush Script MT',cursive;font-weight:400;font-size:clamp(46px,6.2vw,88px);line-height:1.1;color:#fff;display:inline-block;transform:rotate(-3deg);padding:0 .2em .1em 0;clip-path:inset(-20% 100% -20% -5%);animation:write 2.2s .3s forwards cubic-bezier(.5,0,.2,1);text-shadow:0 0 28px rgba(190,255,210,.35)}@keyframes write{to{clip-path:inset(-20% -10% -20% -5%)}}.ul{display:block;width:min(340px,70%);height:20px;margin-top:-2px}.ul path{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-dasharray:340;stroke-dashoffset:340;animation:dash 1.2s 2.2s forwards ease-out}@keyframes dash{to{stroke-dashoffset:0}}
+h1{font-family:'Plus Jakarta Sans',var(--sans);font-size:clamp(32px,6vw,80px);line-height:1.05;font-weight:700;letter-spacing:-.04em}
+h1 span{display:block;overflow:hidden}
+h1 i{display:inline-block;font-style:normal;animation:rise 1.2s cubic-bezier(.16,1,.3,1) both}
+h1 em{font-style:normal;color:var(--lime)}
+@keyframes rise{from{transform:translateY(110%);opacity:0}}
+.lede{margin-top:26px;max-width:460px;font-size:17px;line-height:1.6;color:var(--soft);animation:fade 1.4s .6s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.cta{display:flex;gap:16px;align-items:center;margin-top:36px;flex-wrap:wrap;animation:fade 1.4s .85s both}
+/* liquid button */
+.liq{display:inline-flex;align-items:center;gap:14px;padding:19px 32px;border-radius:999px;font-weight:500;font-size:16px;color:#23261f;background:#e9f5b8;box-shadow:0 14px 34px rgba(0,0,0,.18);transition:transform .3s,background .3s}.p2 .liq{border:1px solid rgba(43,39,33,.2)}
+
+
+.liq:hover{transform:translateY(-3px);background:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.liq svg{width:18px;transition:transform .3s}.liq:hover svg{transform:translateX(5px)}
+.play{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);position:relative;transition:.3s}
+.play:before{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:ping 2.4s infinite}
+@keyframes ping{to{transform:scale(1.55);opacity:0}}
+.play:hover{background:#fff;color:#23261f}
+.play svg{width:18px;margin-left:3px}
+/* cards */
+.stack{position:relative;height:460px;animation:fade 1.6s .5s both}
+.c{position:absolute;background:var(--card);color:var(--ci);border-radius:34px;padding:26px 28px;box-shadow:0 30px 60px rgba(16,21,13,.32);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;transform:translate(calc(var(--px,0)*var(--d)*1px),calc(var(--py,0)*var(--d)*.6px))}
+.c:hover{box-shadow:0 40px 80px rgba(16,21,13,.4)}
+.c small{font-size:13px;color:#7c8177;display:block;margin-bottom:6px}
+.c b{font-weight:400;font-size:26px;line-height:1.1;letter-spacing:-.02em;display:block}
+.c1{left:0;top:10px;width:250px;--d:10;animation:float 7s ease-in-out infinite}
+.c2{right:0;top:120px;width:260px;--d:20;animation:float 8s -2s ease-in-out infinite}
+.c3{left:40px;bottom:0;width:270px;--d:30;background:var(--lime);animation:float 9s -4s ease-in-out infinite}
+@keyframes float{50%{margin-top:-14px}}
+.bar{height:6px;background:#dfe2d8;border-radius:9px;margin-top:14px;overflow:hidden}.bar i{display:block;height:100%;background:#4a5a2a;border-radius:9px;animation:grow 2.4s 1s both cubic-bezier(.16,1,.3,1);width:var(--w)}
+@keyframes grow{from{width:0}}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll i{width:1px;height:46px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.scroll i:after{content:"";position:absolute;left:0;right:0;height:40%;background:#fff;animation:tr 2.4s infinite}
+@keyframes tr{from{transform:translateY(-110%)}to{transform:translateY(260%)}}
+/* marquee */
+.mq{background:#23261f;overflow:hidden;padding:20px 0;border-block:1px solid rgba(255,255,255,.08)}
+.mq div{display:flex;gap:48px;width:max-content;animation:mq 26s linear infinite;font-family:var(--serif);font-size:34px;white-space:nowrap}
+.mq span{color:var(--soft)}.mq span:nth-child(even){color:var(--lime);font-style:italic}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* page 2 */
+.p2{background:#ece7dc;color:#2b2721;padding:110px clamp(16px,5vw,64px) 90px;position:relative}
+.p2 .lab{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(43,39,33,.5);text-align:center}
+.p2 h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.5vw,72px);text-align:center;margin:14px 0 50px;letter-spacing:-.01em}
+.p2 h2 em{color:#9a6a3e}
+.rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1;transform:none}
+.bookwrap{max-width:960px;margin:0 auto;perspective:2000px}
+.book{position:relative;display:grid;grid-template-columns:1fr 1fr;aspect-ratio:1.42;transform:rotateX(6deg);transition:transform .6s;filter:drop-shadow(0 40px 40px rgba(58,44,26,.3))}
+.book:hover{transform:rotateX(2deg)}
+.static,.leaf .f,.leaf .b{background:#faf6ec;padding:clamp(16px,3.4vw,44px);overflow:hidden;background-image:repeating-linear-gradient(transparent 0 31px,rgba(154,106,62,.09) 31px 32px)}
+.static{grid-column:1;border-radius:12px 0 0 12px;box-shadow:inset -18px 0 24px -16px rgba(58,44,26,.3);display:flex;flex-direction:column;justify-content:center;text-align:center;transition:opacity .5s}
+.leaf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.2s cubic-bezier(.6,.05,.2,1);cursor:pointer}
+.leaf.flip{transform:rotateY(-180deg)}
+.leaf .f,.leaf .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.leaf .f{border-radius:0 12px 12px 0;box-shadow:inset 18px 0 24px -16px rgba(58,44,26,.3)}
+.leaf .b{transform:rotateY(180deg);border-radius:12px 0 0 12px;box-shadow:inset -18px 0 24px -16px rgba(58,44,26,.3)}
+.pg h3{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3.2vw,38px);margin-bottom:10px;line-height:1}
+.pg p{font-size:clamp(11px,1.3vw,15px);line-height:1.6;color:rgba(43,39,33,.7)}
+.pg ul{list-style:none;margin-top:12px}.pg li{font-size:clamp(11px,1.3vw,15px);padding:6px 0;border-bottom:1px solid rgba(43,39,33,.12);display:flex;justify-content:space-between;gap:8px}
+.pg li b{font-weight:500;color:#9a6a3e}
+.pg .tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(43,39,33,.45);margin-bottom:12px;display:block}
+.pg a.go{display:inline-block;margin-top:16px;padding:10px 20px;border-radius:99px;background:#2b2721;color:#faf6ec;font-size:12px;letter-spacing:.08em;transition:.3s}
+.pg a.go:hover{background:#9a6a3e;transform:translateY(-2px)}
+.nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:34px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(43,39,33,.55)}
+.nav span{cursor:pointer;padding:8px 14px;border:1px solid rgba(43,39,33,.2);border-radius:99px;transition:.2s}.nav span:hover{background:#2b2721;color:#ece7dc}
+.split{max-width:1040px;margin:90px auto 0;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}.plates{border-top:1px solid rgba(43,39,33,.14)}.journey{order:2;background:#2b2721;color:#ece7dc;border-radius:28px;padding:32px}.journey .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#d7f27a;display:flex;gap:10px;align-items:center}.journey .tag:before{content:"";width:8px;height:8px;border-radius:50%;background:#d7f27a;animation:pulse 1.8s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(215,242,122,.6)}100%{box-shadow:0 0 0 12px rgba(215,242,122,0)}}.journey h3{font-family:var(--serif);font-weight:400;font-size:36px;margin:16px 0 10px;line-height:1}.journey p{font-size:14px;line-height:1.6;color:rgba(236,231,220,.7)}.journey ul{list-style:none;margin:18px 0 26px}.journey li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}
+.plates a{display:grid;grid-template-columns:3em 1fr auto;gap:16px;align-items:baseline;padding:20px 6px;border-bottom:1px solid rgba(43,39,33,.14);transition:.3s}
+.plates a:hover{background:rgba(255,252,244,.6);padding-left:18px}
+.plates .n{font-size:12px;color:rgba(43,39,33,.4)}.plates .t{font-family:var(--serif);font-size:clamp(20px,2.6vw,30px)}.plates .p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9a6a3e}
+.end{text-align:center;margin-top:90px}
+.end .liq{margin-top:10px}
+.foot{text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(43,39,33,.45);margin-top:60px}
+@media(max-width:860px){.split{grid-template-columns:1fr}.journey{order:0}.wrap{grid-template-columns:1fr}.stack{height:420px}.dock a{padding:10px 11px;font-size:10px}.ghost{font-size:30vw}.scroll{display:none}}
+@media(max-width:600px){
+.dock{top:max(14px,env(safe-area-inset-top));gap:2px;padding:4px;border-radius:14px}
+.dock a{padding:10px 9px;font-size:9.5px;letter-spacing:.08em}
+.dock a.on{display:none}
+.hero{padding:104px 20px 64px}
+.wrap{gap:28px}
+.sig{font-size:clamp(52px,17vw,76px)}
+.lede{font-size:16px}
+.cta{margin-top:28px}
+.liq{padding:17px 26px;font-size:15px}
+.play{width:56px;height:56px}
+.stack{height:360px}
+.c{padding:20px 22px;border-radius:28px}
+.c b{font-size:21px}
+.c1{width:60%;top:0}.c2{width:62%;top:105px}.c3{width:66%;left:6%;bottom:0}
+.p2{padding:80px 14px 70px}
+.book{aspect-ratio:.88;transform:none!important}
+.static,.leaf .f,.leaf .b{padding:14px}
+.pg h3{font-size:20px}.pg p,.pg li{font-size:11px;line-height:1.5}.pg li{flex-wrap:wrap;padding:5px 0}.pg .tag{font-size:8.5px;margin-bottom:8px}
+.pg a.go{padding:8px 14px;font-size:11px;margin-top:10px}
+.journey{padding:24px}.journey h3{font-size:30px}
+.split{gap:32px;margin-top:60px}
+.plates a{grid-template-columns:2em 1fr;gap:10px}.plates .p{grid-column:2;text-align:left}
+.end{margin-top:60px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head>
+<body>
+<nav class="dock">
+ <a class="mk" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">MK</a>
+ <a class="on" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Home</a>
+ <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Work</a>
+ <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Services</a>
+ <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Contact</a>
+</nav>
+
+<section class="hero" id="hero">
+ <canvas id="cv"></canvas>
+ <div class="ghost">MARWAN</div>
+ <div class="wrap">
+  <div>
+   <div class="sigwrap"><p class="sig">Marwan</p><svg class="ul" viewBox="0 0 340 20" aria-hidden="true"><path d="M4 13 C70 3 130 18 200 8 S300 6 336 11"/></svg></div>
+   <h1><span><i style="animation-delay:.2s">Websites &amp; words</i></span><span><i style="animation-delay:.34s">that <em>sell.</em></i></span></h1>
+   <p class="lede">I build fast, modern websites and write the copy that turns visitors into customers — landing pages, sales pages, emails and more.</p>
+   <div class="cta">
+    <a class="liq" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Work with me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+    <a class="play" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener" aria-label="See my work"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+   </div>
+  </div>
+  <div class="stack" id="stack">
+   <a class="c c1" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><small>Craft</small><b>Web Developer</b><div class="bar"><i style="--w:92%"></i></div></a>
+   <a class="c c2" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><small>Words</small><b>Copywriter</b><div class="bar"><i style="--w:88%"></i></div></a>
+   <a class="c c3" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><small>Let's talk</small><b>Message me on Instagram →</b></a>
+  </div>
+ </div>
+ <a class="scroll" href="#details">Discover<i></i></a>
+</section>
+
+
+
+<section class="p2" id="details">
+ <p class="lab rv">The details</p>
+ <h2 class="rv">What I do, <em>page by page</em></h2>
+ <div class="bookwrap rv"><div class="book" id="book">
+  <div class="static pg"><span class="tag">Portfolio · 2026</span><h3>Marwan Kassem</h3><p>20 years old. Web developer &amp; copywriter who builds the site <i>and</i> the words on it.</p><p style="margin-top:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Click the page to turn →</p></div>
+  <div class="leaf" style="z-index:3"><div class="f pg"><span class="tag">01 · Build</span><h3>Web Development</h3><ul><li>Landing pages <b>fast</b></li><li>Business websites <b>responsive</b></li><li>Animations &amp; motion <b>smooth</b></li><li>Speed &amp; SEO basics <b>built-in</b></li></ul></div>
+   <div class="b pg"><span class="tag">02 · Write</span><h3>Copywriting</h3><ul><li>Landing pages <b>clear</b></li><li>Sales pages <b>persuasive</b></li><li>Website copy <b>on-brand</b></li><li>Email marketing <b>engaging</b></li></ul></div></div>
+  <div class="leaf" style="z-index:2"><div class="f pg"><span class="tag">03 · Process</span><h3>How we work</h3><ul><li>1 · Chat on Instagram <b>day 1</b></li><li>2 · Plan &amp; design <b>days 2–4</b></li><li>3 · Build &amp; launch <b>week 1–2</b></li><li>4 · Write &amp; refine <b>ongoing</b></li></ul></div>
+   <div class="b pg"><span class="tag">04 · Why me</span><h3>Young, hungry, hands-on</h3><p>You talk directly to the person doing the work. No agency layers, no delays — just fast delivery and results you can measure.</p></div></div>
+  <div class="leaf" style="z-index:1"><div class="f pg"><span class="tag">05 · Next</span><h3>Let's build yours</h3><p>Tell me about your business and I'll show you what's possible.</p><a class="go" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Work with me</a></div>
+   <div class="b pg"><span class="tag">06 · About</span><h3>Hi, I'm Marwan</h3><p>I started building websites because I love seeing an idea become something people can click. Copywriting came next — because a great site with weak words helps no one.</p><a class="go" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">@maro.szn1</a></div></div>
+ </div>
+ <div class="nav"><span id="pv">← Back</span><em id="ct" style="font-style:normal">1 / 4</em><span id="nx">Next →</span></div></div>
+
+ <div class="split rv"><div class="journey"><span class="tag">Documenting the journey</span><h3>Building in public</h3><p>I share the whole process on Instagram — real work, behind-the-scenes builds, and what I'm learning along the way.</p><ul><li>Behind the scenes</li><li>Wins, lessons &amp; mistakes</li><li>New projects as they ship</li></ul><a class="liq" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Follow the journey</a></div><div class="plates"><p class="lab" style="text-align:left;margin-bottom:14px">Services</p>
+  <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><span class="n">01</span><span class="t">Landing pages</span><span class="p">Copy + Web</span></a>
+  <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><span class="n">02</span><span class="t">Sales pages</span><span class="p">Copy</span></a>
+  <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><span class="n">03</span><span class="t">Websites</span><span class="p">Copy + Web</span></a>
+  <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener"><span class="n">04</span><span class="t">Email marketing</span><span class="p">Copy</span></a>
+ </div>
+ </div><div class="end rv"><h2 style="margin-bottom:24px">Ready when <em>you</em> are.</h2><a class="liq" href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener">Work with me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+ <p class="foot">Marwan Kassem · Web Developer · Copywriter · <a href="https://www.instagram.com/maro.szn1/" target="_blank" rel="noopener" style="text-decoration:underline">@maro.szn1</a></p>
+</section>
+
+<script>
+
+// scroll reveal
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+// parallax
+var hero=document.getElementById('hero');
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--px',((e.clientX-r.left)/r.width*2-1).toFixed(3));hero.style.setProperty('--py',((e.clientY-r.top)/r.height*2-1).toFixed(3));mx=e.clientX-r.left});
+document.querySelectorAll('.c').forEach(function(c){c.style.setProperty('--px','var(--px)')});
+// moss / pollen canvas
+var cv=document.getElementById('cv'),x=cv.getContext('2d'),W,H,bl=[],pl=[],mx=-999,t=0;
+function rs(){W=cv.width=hero.clientWidth;H=cv.height=hero.clientHeight;bl=[];var n=Math.round(W/3.2);for(var i=0;i<n;i++){var bx=i/n*W,hh=40+Math.random()*70+Math.sin(i*.05)*30;bl.push({x:bx,h:hh,p:Math.random()*6.3,g:Math.random()})}pl=[];for(i=0;i<70;i++)pl.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.5,s:Math.random()*.4+.1,p:Math.random()*6})}
+rs();addEventListener('resize',rs);
+(function f(){return;t+=.016;x.clearRect(0,0,W,H);
+ bl.forEach(function(b){var d=Math.abs(b.x-mx),push=d<140?(1-d/140)*(b.x<mx?-1:1)*28:0,sw=Math.sin(t*1.2+b.p+b.x*.01)*8+push;
+  x.strokeStyle='hsla('+(70+b.g*25)+',55%,'+(22+b.g*20)+'%,.9)';x.lineWidth=2;x.beginPath();x.moveTo(b.x,H);x.quadraticCurveTo(b.x+sw*.4,H-b.h*.6,b.x+sw,H-b.h);x.stroke()});
+ pl.forEach(function(p){p.y-=p.s;p.x+=Math.sin(t+p.p)*.3;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}x.fillStyle='rgba(236,244,224,'+(.3+.3*Math.sin(t*2+p.p))+')';x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()});
+ requestAnimationFrame(f)})();
+// meadow
+var gc=document.getElementById('cv'),g=gc.getContext('2d'),GW,GH,DP,LY=[],PT=[],gs=-999,gt=0,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function gb(){DP=Math.min(devicePixelRatio||1,2);GW=hero.clientWidth;GH=hero.clientHeight;gc.width=GW*DP;gc.height=GH*DP;g.setTransform(DP,0,0,DP,0,0);
+ var cfg=[{gap:4.4,h0:110,h1:210,hue:80,l0:14,l1:24,w:3.6,m:.55},{gap:3.4,h0:80,h1:160,hue:78,l0:20,l1:33,w:4,m:.8},{gap:2.9,h0:50,h1:120,hue:74,l0:28,l1:48,w:4.8,m:1}];
+ LY=cfg.map(function(c){var a=[];for(var x=-6;x<GW+6;x+=c.gap*(.7+Math.random()*.6)){var r=Math.random(),tall=Math.sin(x*.004)*.25+.85;a.push({x:x,h:(c.h0+(c.h1-c.h0)*r*r)*tall*Math.min(1,GW/1100+.45),p:Math.random()*6.3,lean:(Math.random()-.5)*16,w:c.w*(.7+Math.random()*.7),col:'hsl('+(c.hue+Math.random()*14)+','+(48+Math.random()*14)+'%,'+(c.l0+(c.l1-c.l0)*Math.random())+'%)'})}return{b:a,m:c.m}});
+ PT=[];for(var i=0;i<60;i++)PT.push({x:Math.random()*GW,y:Math.random()*GH,r:Math.random()*2.2+.6,s:Math.random()*.35+.08,p:Math.random()*6.3})}
+gb();addEventListener('resize',gb);
+function gf(){return;gt+=RM?0:.016;gs+=(mx-gs)*.12;g.clearRect(0,0,GW,GH);
+ LY.forEach(function(L){L.b.forEach(function(b){var k=b.h/100,wind=(Math.sin(gt*1.1+b.x*.005+b.p*.3)*9+Math.sin(gt*2.3+b.x*.013+b.p)*3.5+Math.sin(b.x*.004-gt*1.5)*9)*k*L.m,d=b.x-gs,push=Math.abs(d)<200?Math.sign(d)*Math.pow(1-Math.abs(d)/200,2)*60*k*L.m:0,sw=wind+push+b.lean*k,tx=b.x+sw,ty=GH-b.h*(1-Math.min(.12,Math.abs(sw)/b.h*.2)),cx=b.x+sw*.3+b.lean*.2,cy=GH-b.h*.55;g.fillStyle=b.col;g.beginPath();g.moveTo(b.x-b.w/2,GH+2);g.quadraticCurveTo(cx-b.w*.35,cy,tx,ty);g.quadraticCurveTo(cx+b.w*.35,cy,b.x+b.w/2,GH+2);g.fill()})});
+ var gr=g.createLinearGradient(0,GH-90,0,GH);gr.addColorStop(0,'rgba(8,12,5,0)');gr.addColorStop(1,'rgba(8,12,5,.5)');g.fillStyle=gr;g.fillRect(0,GH-90,GW,90);
+ PT.forEach(function(p){p.y-=p.s;p.x+=Math.sin(gt+p.p)*.3;if(p.y<-5){p.y=GH+5;p.x=Math.random()*GW}g.fillStyle='rgba(240,248,220,'+(.25+.3*Math.sin(gt*2+p.p))+')';g.beginPath();g.arc(p.x,p.y,p.r,0,6.3);g.fill()});
+ requestAnimationFrame(gf)}
+gf();
+// night sky
+var ST=[],SS=null,nt=0,AUR=[];
+function ns(){ST=[];var n=Math.round(GW*GH/3800);for(var i=0;i<n;i++){var r=Math.random();ST.push({x:Math.random()*GW,y:Math.random()*GH*.8,r:r<.8?.35+Math.random()*.7:(r<.95?1.1+Math.random()*.8:1.9+Math.random()*1.3),p:Math.random()*6.3,s:.6+Math.random()*2.2,c:r>.9?'190,215,255':(r>.8?'255,232,200':'255,255,255')})}}
+ns();addEventListener('resize',ns);
+function mt(y0,amp,sd,par){g.beginPath();g.moveTo(0,GH);for(var x=0;x<=GW;x+=6){var u=x+par;g.lineTo(x,y0-(Math.sin(u*.0032+sd)*amp+Math.sin(u*.0085+sd*2)*amp*.45+Math.sin(u*.021+sd*3)*amp*.12))}g.lineTo(GW,GH);g.closePath()}
+function nf(){nt+=RM?0:.016;gs+=((mx<-900?GW/2:mx)-gs)*.07;var px=gs-GW/2;
+ g.globalCompositeOperation='source-over';g.clearRect(0,0,GW,GH);
+ ST.forEach(function(s){var a=.3+.7*(.5+.5*Math.sin(nt*s.s+s.p)),x=s.x-px*.006*s.r;g.fillStyle='rgba('+s.c+','+a.toFixed(2)+')';g.beginPath();g.arc(x,s.y,s.r,0,6.3);g.fill();if(s.r>1.8){g.strokeStyle='rgba('+s.c+','+(a*.5).toFixed(2)+')';g.lineWidth=.7;var L=s.r*5*a;g.beginPath();g.moveTo(x-L,s.y);g.lineTo(x+L,s.y);g.moveTo(x,s.y-L);g.lineTo(x,s.y+L);g.stroke()}});
+ if(!SS&&!RM&&Math.random()<.004)SS={x:Math.random()*GW*.8+GW*.2,y:Math.random()*GH*.3,l:1};
+ if(SS){SS.x-=9;SS.y+=4;SS.l-=.02;var tl=g.createLinearGradient(SS.x,SS.y,SS.x+90,SS.y-40);tl.addColorStop(0,'rgba(255,255,255,'+Math.max(SS.l,0)+')');tl.addColorStop(1,'rgba(255,255,255,0)');g.strokeStyle=tl;g.lineWidth=1.6;g.beginPath();g.moveTo(SS.x,SS.y);g.lineTo(SS.x+90,SS.y-40);g.stroke();if(SS.l<=0)SS=null}
+ g.globalCompositeOperation='lighter';
+ AUR.forEach(function(c,l){for(var x=-4;x<GW+8;x+=6){var base=GH*(.52+l*.04)+Math.sin(x*.0028+nt*.25+l*2)*55+Math.sin(x*.0075-nt*.45+l)*22-px*.01*(l+1),h=GH*.22+GH*.14*(.5+.5*Math.sin(x*.0045+nt*.35+l*1.7)),st=.5+.5*Math.sin(x*.045+nt*1.1+l)*Math.sin(x*.012-nt*.35),top=base-h,gr=g.createLinearGradient(0,top,0,base+26);gr.addColorStop(0,'rgba('+c+',0)');gr.addColorStop(.72,'rgba('+c+','+(.2*st+.03).toFixed(3)+')');gr.addColorStop(1,'rgba('+c+',0)');g.fillStyle=gr;g.fillRect(x,top,8,base+26-top)}});
+ g.globalCompositeOperation='source-over';
+ mt(GH*.8,GH*.09,1.3,px*.03);var mg=g.createLinearGradient(0,GH*.62,0,GH);mg.addColorStop(0,'#0a1411');mg.addColorStop(1,'#000');g.fillStyle=mg;g.fill();g.strokeStyle='rgba(160,255,210,.16)';g.lineWidth=1;g.stroke();
+ mt(GH*.91,GH*.07,4.1,px*.06);g.fillStyle='#000';g.fill();
+ requestAnimationFrame(nf)}
+nf();
+// book
+var lv=[].slice.call(document.querySelectorAll('.leaf')),cur=0,ct=document.getElementById('ct');
+function go(n){cur=Math.max(0,Math.min(lv.length,n));lv.forEach(function(l,i){l.classList.toggle('flip',i<cur);l.style.zIndex=i<cur?i+1:lv.length-i});ct.textContent=(cur+1)+' / '+(lv.length+1)}
+lv.forEach(function(l,i){l.addEventListener('click',function(e){if(e.target.closest('a'))return;go(l.classList.contains('flip')?i:i+1)})});
+var tx=null,bk=document.getElementById('book');bk.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});bk.addEventListener('touchend',function(e){if(tx===null)return;var d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>40){go(cur+(d<0?1:-1));e.preventDefault()}});
+document.getElementById('nx').onclick=function(){go(cur+1)};document.getElementById('pv').onclick=function(){go(cur-1)};
+addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+</script>
+</body></html>
